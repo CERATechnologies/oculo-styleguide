@@ -14,3 +14,4 @@ go to localhost:3000
 # TODO
 1. ESlint
 2. Hot reload module
+3. Specs for components
