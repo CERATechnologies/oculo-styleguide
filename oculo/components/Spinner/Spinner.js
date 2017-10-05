@@ -12,7 +12,6 @@ export default class Spinner extends Component {
     category: 'Spinner',
     title: 'Spinner',
     description: 'Spinner for page transitions.',
-    code: `<Spinner />`
   }
 
   render () {

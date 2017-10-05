@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
 import Spinner from './Spinner'
 
 export default class extends Component {
@@ -7,7 +6,7 @@ export default class extends Component {
     index: '5.1',
     category: 'Spinner',
     title: 'Spinner',
-    description: 'All Spinners demo for page transitions',
+    description: 'All Spinners demo for page transitions. You can customise this spinner by its `size` and `color` prop',
     code: `
 <Spinner color={'#d86048'} size={'100px'}/>
 <Spinner color={'#bee8ab'} size={'100px'}/>

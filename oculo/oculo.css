@@ -15,6 +15,20 @@
   margin-bottom: 0;
 }
 
+/* Buttons */
+.btn-group.secondary button, .btn-group.secondary a {
+  padding: 5px 11px;
+  border: 2px solid #e9673e;
+  color: #e9673e;
+  background-color: white;
+}
+.btn-group.secondary button:hover, .btn-group.secondary.open button,
+.btn-group.secondary a:hover, .btn-group.secondary.open a {
+  border-color: #c64a34;
+  color: #c64a34;
+}
+
+/* Spinner */
 .spinner {
   text-indent: -9999em;
   overflow: hidden;
