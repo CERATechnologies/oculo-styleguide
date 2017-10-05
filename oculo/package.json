@@ -1,0 +1,17 @@
+{
+  "name": "react-styleguide-generator-example",
+  "private": true,
+  "scripts": {
+    "start": "npm run styleguide && npm run serve",
+    "styleguide": "../bin/rsg \"components/**/*.js\" -c \"config-oculo-styleguide.json\"",
+    "serve": "serve ./styleguide"
+  },
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1"
+  },
+  "devDependencies": {
+    "serve": "^1.4.0"
+  }
+}

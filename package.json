@@ -1,0 +1,126 @@
+{
+  "name": "react-styleguide-generator",
+  "version": "1.4.0",
+  "description": "Easily generate a good-looking styleguide by adding some documentation to your React project",
+  "main": "lib/rsg.js",
+  "bin": {
+    "rsg": "bin/rsg"
+  },
+  "config": {
+    "postcss_plugins": "--use postcss-import --use postcss-cssnext --use cssnano",
+    "browserify_transforms": "[ babelify --presets [ es2015 react ] --plugins [ add-module-exports transform-class-properties ] ]"
+  },
+  "scripts": {
+    "test": "standard && ava",
+    "prod": "npm run clean && npm run build",
+    "build": "npm run build:css && npm run build:js",
+    "build:css": "postcss $npm_package_config_postcss_plugins --output dist/app.css app/index.css",
+    "build:js": "browserify -t $npm_package_config_browserify_transforms -x react -x react-dom app | uglifyjs -m -o dist/app.js",
+    "dev-build": "npm run dev-build:css && npm run dev-build:js",
+    "dev-build:css": "postcss $npm_package_config_postcss_plugins --output dist/app.css app/index.css",
+    "dev-build:js": "browserify -d -t $npm_package_config_browserify_transforms -x react -x react-dom app -o dist/app.js",
+    "clean": "rimraf dist/*",
+    "styleguide": "node bin/rsg 'example/components/**/*.js' -v",
+    "ghpages": "npm run styleguide -- -r 'react-styleguide-generator' && gh-pages -d styleguide"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "lib",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pocotan001/react-styleguide-generator.git"
+  },
+  "keywords": [
+    "component",
+    "documentation",
+    "generator",
+    "markdown",
+    "react",
+    "styleguide"
+  ],
+  "author": "pocotan001",
+  "contributors": [
+    {
+      "name": "ygoto3"
+    },
+    {
+      "name": "Theo Gravity",
+      "email": "theo@suteki.nu"
+    },
+    {
+      "name": "Marcello Bastea-Forte",
+      "email": "marcello@cellosoft.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pocotan001/react-styleguide-generator/issues"
+  },
+  "homepage": "https://github.com/pocotan001/react-styleguide-generator#readme",
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "dist",
+      "example"
+    ]
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "peerDependencies": {
+    "react": ">=15.4.1",
+    "react-dom": ">=15.4.1"
+  },
+  "dependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.11.5",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "babel-register": "^6.11.6",
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "bunyan": "^1.4.0",
+    "fs-extra": "^0.24.0",
+    "glob": "^5.0.10",
+    "minimist": "^1.1.1",
+    "mustache": "^2.1.2",
+    "prop-types": "^15.6.0",
+    "react-docgen": "^2.0.0",
+    "react-simpletabs": "^0.7.0",
+    "slash": "^1.0.0",
+    "watchify": "^3.7.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-eslint": "^6.1.2",
+    "cssnano": "^3.8.1",
+    "gh-pages": "^0.4.0",
+    "highlight.js": "^8.6.0",
+    "marked": "^0.3.3",
+    "page": "1.6.3",
+    "postcss-cli": "^2.6.0",
+    "postcss-cssnext": "^2.9.0",
+    "postcss-import": "^9.0.0",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1",
+    "rimraf": "^2.4.0",
+    "standard": "^5.3.1",
+    "uglify-js": "^2.4.23"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ],
+    "plugins": [
+      "add-module-exports",
+      "transform-class-properties"
+    ]
+  }
+}
