@@ -29,6 +29,8 @@ export default class OculoButton extends Component {
   }
 
   render () {
+    // spread operator not working here {...style, color: this.props.color || style.color}
+
     return (
         <Button style={style} onClick={this.props.onClick}>
           {this.props.buttonLabel}
