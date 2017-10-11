@@ -39,9 +39,9 @@ const height = '50px'
 export default class extends Component {
   static styleguide = {
     index: '6.1',
-    category: 'ColorGuide',
+    category: 'Color Guide',
     title: 'Color Guide',
-    description: 'Colors used',
+    description: 'Colors used ...',
     code: `
     Current colours used by Oculo as of 10 Oct 2017
     Official colours are used on the sales and app site
