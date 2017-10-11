@@ -9,7 +9,8 @@ export default class extends Component {
     title: 'OculoButton',
     description: 'Oculo Button examples',
     code: `
-        <OculoButton buttonLabel={'YOLO'} color={'#90cbf3'}/>
+      <OculoButton buttonLabel={'Button 1'} color={'#90cbf3'} onClick={() => console.log('Button 1')}/>
+
     `
   }
 
