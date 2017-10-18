@@ -15,3 +15,13 @@ go to localhost:3000
 1. ESlint
 2. Hot reload module
 3. Specs for components
+
+# Resources
+1. https://coolors.co
+2. http://bootflat.github.io/color-picker-blue.html
+3. https://designschool.canva.com/blog/tints-and-shades/
+
+# Notes
+1. A `tint` is the mixture of a color with white
+2. A `shade` is the mixture of a color with black
+3. A `tone` is produced either by the mixture of a color with grey, or by both tinting and shading.

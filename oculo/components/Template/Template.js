@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 export default class extends Component {
   static styleguide = {
-    index: '6.1',
-    category: 'Enter Category in camel case',
+    index: '10.1',
+    category: 'Template',
     title: 'Enter title',
     description: 'Enter a description',
     code: `
@@ -14,7 +14,7 @@ export default class extends Component {
   render () {
     return (
       <div>
-        Helo !
+        This is a template for new components
       </div>
     )
   }

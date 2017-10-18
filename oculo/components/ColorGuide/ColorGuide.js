@@ -1,40 +1,51 @@
 import React, { Component } from 'react'
-import { Row } from 'react-bootstrap'
+import { Row, Col, Panel } from 'react-bootstrap'
 
-const colors = {
-  orange1: '#ea573e',
-  orange2: '#d86048',
-  orange3: '#dc7660',
-  orange4: '#e9673e',
-  orange5: '#e65844',
-  orange6: '#e7573d',
-  orange7: '#d43f3a',
-  orange8: '#d9534f',
-  green1: '#bee8ab',
-  green2: '#54821d',
-  green3: '#7cc148',
-  blue1: '#55bfe0',
-  blue2: '#90cbf3',
-  blue3: '#57b6dd',
-  blue4: '#5ec5e6',
-  blue5: '#46b8da',
-  blue6: '#5bc0de',
-  blue7: '#46b8da',
-  blue8: '#25a9e0',
-  yellow1: '#f9dd8d',
-  dark1: '#000000',
-  dark2: '#222222',
-  dark3: '#245959',
-  dark4: '#263333',
-  dark5: '#434a54',
-  dark6: '#e6e6e6',
-  dark7: '#404040',
-  dark8: '#8c8c8c',
-  white1: '#ffffff',
-  white2: '#f2f2f2',
+const flatColor = {
+  orangeTint3: { name: 'Melon', hex: '#f5b2a7' },
+  orangeTint2: { name: 'Dark Salmon', hex: '#f19484' },
+  orangeTint1: { name: 'Terra Cotta', hex: '#ed7561' },
+  orangePrimary: { name: 'Carmine Pink', hex: '#ea573e' },
+  orangeShade1: { name: 'Golden Gate Bridge', hex: '#c04833' },
+  orangeShade2: { name: 'Burnt Umber', hex: '#953828' },
+  orangeShade3: { name: 'Liver', hex: '#6b281d' },
+  blueTint3: { name: 'Azureish white', hex: '#cce7f9' },
+  blueTint2: { name: 'Powder Blue', hex: '#b8ddf7' },
+  blueTint1: { name: 'Non-photo blue', hex: '#a4d4f5' },
+  bluePrimary: { name: 'Light Cornflower Blue', hex: '#90cbf3' },
+  blueShade1: { name: 'Moonstone Blue', hex: '#76a7c7' },
+  blueShade2: { name: 'Rackley', hex: '#5c829b' },
+  blueShade3: { name: 'Deep Space Sparkle', hex: '#425d6f' },
+  greenTint3: { name: 'Nyanza', hex: '#e1f4d8' },
+  greenTint2: { name: 'Tea Green', hex: '#d5f039' },
+  greenTint1: { name: 'Tea Green', hex: '#c9ecba' },
+  greenPrimary: { name: 'Light Moss Green', hex: '#bee8ab' },
+  greenShade1: { name: 'Dark Sea Green', hex: '#9cbe8c' },
+  greenShade2: { name: 'Camouflage Green', hex: '#79946d' },
+  greenShade3: { name: 'Ebony', hex: '#576a4e' },
+  yellowTint3: { name: 'Blanced Almond', hex: '#fcefcb' },
+  yellowTint2: { name: 'Banana Mania', hex: '#fbe9b6' },
+  yellowTint1: { name: 'Peach-Yellow', hex: '#fae3a1' },
+  yellowPrimary: { name: 'Flavescent', hex: '#f9dd8d' },
+  yellowShade1: { name: 'Misty Moss', hex: '#ccb574' },
+  yellowShade2: { name: 'Chamoisee', hex: '#9f8d5a' },
+  yellowShade3: { name: 'Raw Umber', hex: '#726541' },
+  grayTint3: { name: 'Silver Chalice', hex: '#a9acb1' },
+  grayTint2: { name: 'Roman Silver', hex: '#878b92' },
+  grayTint1: { name: 'Dim Gray', hex: '#656a73' },
+  grayPrimary: { name: 'Outer Space', hex: '#434a54' },
+  grayShade1: { name: 'Arsenic', hex: '#373d45' },
+  grayShade2: { name: 'Gunmetal', hex: '#2b3036' },
+  grayShade3: { name: 'Dark Gunmetal', hex: '#1f2227' },
+  whiteTint2: { name: 'White Smoke', hex: '#f6f6f6' },
+  whiteTint1: { name: 'White Smoke', hex: '#f4f4f4' },
+  whitePrimary: { name: 'Anti-Flash White', hex: '#f2f2f2' },
+  whiteShade1: { name: 'Lavender Gray', hex: '#c7c7c7' },
+  whiteShade2: { name: 'Spanish Gray', hex: '#9b9b9b' },
 }
 
-const height = '50px'
+const height = '100px'
+const border = 'solid 1px'
 
 export default class extends Component {
   static styleguide = {
@@ -42,71 +53,79 @@ export default class extends Component {
     category: 'Color Guide',
     title: 'Color Guide',
     description: 'Colors used ...',
-    code: `
-    Current colours used by Oculo as of 10 Oct 2017
-    Official colours are used on the sales and app site
-    Unofficial colours are used in the investor deck and marketing/promotional documents
-    `
+    code: ` `
   }
 
   render () {
     return (
       <div>
-        <h1> Consolidated colours (Work in progress) </h1>
-        <h2> Primary colors </h2>
-        <Row style={ { backgroundColor: colors.orange1, height, border: 'solid 1px'  } }><h2>{colors.orange1} Orange </h2></Row>
-        <Row style={ { backgroundColor: colors.white1, height, border: 'solid 1px'  } }><h2>{colors.white1} White </h2></Row>
-        <Row style={ { backgroundColor: colors.dark1, height, border: 'solid 1px'  } }><h2>{colors.dark1} Black </h2></Row>
+        <h1>Core pallete</h1>
 
-        <h2> Secondary colors </h2>
-        <Row style={ { backgroundColor: colors.green1, height, border: 'solid 1px'  } }><h2>{colors.green1} Green </h2></Row>
-        <Row style={ { backgroundColor: colors.blue2, height, border: 'solid 1px'  } }><h2>{colors.blue2} Blue </h2></Row>
-        <Row style={ { backgroundColor: colors.yellow1, height, border: 'solid 1px'  } }><h2>{colors.yellow1} Yellow </h2></Row>
+        <h2>Primary colors</h2>
+        <Row>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangePrimary.hex, height, border} }>
+            <i>{`${flatColor.orangePrimary.name} - ${flatColor.orangePrimary.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.bluePrimary.hex, height, border} }>
+            <i>{`${flatColor.bluePrimary.name} - ${flatColor.bluePrimary.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.greenPrimary.hex, height, border} }>
+            <i>{`${flatColor.greenPrimary.name} - ${flatColor.greenPrimary.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.yellowPrimary.hex, height, border} }>
+            <i>{`${flatColor.yellowPrimary.name} - ${flatColor.yellowPrimary.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.grayPrimary.hex, height, border, color: 'white'} }>
+            <i>{`${flatColor.grayPrimary.name} - ${flatColor.grayPrimary.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.whitePrimary.hex, height, border} }>
+            <i>{`${flatColor.whitePrimary.name} - ${flatColor.whitePrimary.hex}`}</i>
+          </Col>
+        </Row>
 
-        <h2>Black shades</h2>
-        <Row style={ { backgroundColor: colors.dark2, height, border: 'solid 1px'  } }><h2>{colors.dark2} Black shade 1 </h2></Row>
-        <Row style={ { backgroundColor: colors.dark5, height, border: 'solid 1px'  } }><h2>{colors.dark5} Black shade 2 </h2></Row>
-        <Row style={ { backgroundColor: colors.dark8, height, border: 'solid 1px'  } }><h2>{colors.dark8} Black shade 3 </h2></Row>
+        <h2>Tint</h2>
+        <Row>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangeTint3.hex, height, border} }>
+            <i>{`${flatColor.orangeTint3.name} - ${flatColor.orangeTint3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.blueTint3.hex, height, border} }>
+            <i>{`${flatColor.blueTint3.name} - ${flatColor.blueTint3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.greenTint3.hex, height, border} }>
+            <i>{`${flatColor.greenTint3.name} - ${flatColor.greenTint3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.yellowTint3.hex, height, border} }>
+            <i>{`${flatColor.yellowTint3.name} - ${flatColor.yellowTint3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.grayTint3.hex, height, border} }>
+            <i>{`${flatColor.grayTint3.name} - ${flatColor.grayTint1.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.whiteTint1.hex, height, border} }>
+            <i>{`${flatColor.whiteTint1.name} - ${flatColor.whiteTint1.hex}`}</i>
+          </Col>
+        </Row>
 
-        <br />
-
-        <h1> Official colours </h1>
-        <Row style={ { backgroundColor: colors.orange1, height, border: 'solid 1px' } }><h2>{colors.orange1} Primary orange</h2></Row>
-        <Row style={ { backgroundColor: colors.orange5, height, border: 'solid 1px' } }><h2>{colors.orange5} Zendesk</h2></Row>
-        <Row style={ { backgroundColor: colors.orange4, height, border: 'solid 1px' } }><h2>{colors.orange4} Table pagination</h2></Row>
-        <Row style={ { backgroundColor: colors.orange5, height, border: 'solid 1px' } }><h2>{colors.orange5} Address Book Oculo Member border</h2></Row>
-        <Row style={ { backgroundColor: colors.orange7, height, border: 'solid 1px' } }><h2>{colors.orange7} Manage My Practice - User - Remove Button BG Color</h2></Row>
-        <Row style={ { backgroundColor: colors.orange8, height, border: 'solid 1px' } }><h2>{colors.orange8} Manage My Practice - User - Remove Button BG Border</h2></Row>
-
-        <Row style={ { backgroundColor: colors.green2, height, border: 'solid 1px' } }><h2>{colors.green2} My referral page - tab indicator</h2></Row>
-        <Row style={ { backgroundColor: colors.green3, height, border: 'solid 1px' } }><h2>{colors.green3} Address Book - Create New Button</h2></Row>
-
-        <Row style={ { backgroundColor: colors.blue1, height, border: 'solid 1px' } }><h2>{colors.blue1} Oculo Sales site</h2></Row>
-        <Row style={ { backgroundColor: colors.blue3, height, border: 'solid 1px' } }><h2>{colors.blue3} Address Book - Primary Banner</h2></Row>
-        <Row style={ { backgroundColor: colors.blue4, height, border: 'solid 1px' } }><h2>{colors.blue4} Patient Page - Tab indicator</h2></Row>
-        <Row style={ { backgroundColor: colors.blue5, height, border: 'solid 1px' } }><h2>{colors.blue5} Patient Page - View Patient Button BG</h2></Row>
-        <Row style={ { backgroundColor: colors.blue6, height, border: 'solid 1px' } }><h2>{colors.blue6} Patient Page -  View Patient Button Border</h2></Row>
-        <Row style={ { backgroundColor: colors.blue7, height, border: 'solid 1px' } }><h2>{colors.blue7} Address Book - View Profile link button</h2></Row>
-
-        <Row style={ { backgroundColor: colors.white1, height, border: 'solid 1px' } }><h2>{colors.white1}</h2></Row>
-        <Row style={ { backgroundColor: colors.white2, height, border: 'solid 1px' } }><h2>{colors.white2}</h2></Row>
-
-        <Row style={ { backgroundColor: colors.dark1, height, border: 'solid 1px' } }><h2>{colors.dark1}</h2></Row>
-        <Row style={ { backgroundColor: colors.dark2, height, border: 'solid 1px' } }><h2>{colors.dark2}</h2></Row>
-        <Row style={ { backgroundColor: colors.dark3, height, border: 'solid 1px' } }><h2>{colors.dark3}</h2></Row>
-        <Row style={ { backgroundColor: colors.dark4, height, border: 'solid 1px' } }><h2>{colors.dark4}</h2></Row>
-        <Row style={ { backgroundColor: colors.dark5, height, border: 'solid 1px' } }><h2>{colors.dark5}</h2></Row>
-        <Row style={ { backgroundColor: colors.dark6, height, border: 'solid 1px' } }><h2>{colors.dark6} Patient Page - Sent by</h2></Row>
-        <Row style={ { backgroundColor: colors.dark7, height, border: 'solid 1px' } }><h2>{colors.dark7} Address Book Search Modal - Close button, AddressBook Secondary Banner</h2></Row>
-        <Row style={ { backgroundColor: colors.dark8, height, border: 'solid 1px' } }><h2>{colors.dark8} User name</h2></Row>
-
-        <br />
-
-        <h1> Unofficial colours </h1>
-        <Row style={ { backgroundColor: colors.orange2, height, border: 'solid 1px'  } }><h2>{colors.orange2}</h2></Row>
-        <Row style={ { backgroundColor: colors.green1, height, border: 'solid 1px'  } }><h2>{colors.green1}</h2></Row>
-        <Row style={ { backgroundColor: colors.blue2, height, border: 'solid 1px'  } }><h2>{colors.blue2}</h2></Row>
-        <Row style={ { backgroundColor: colors.yellow1, height, border: 'solid 1px'  } }><h2>{colors.yellow1}</h2></Row>
+        <h2>Shade</h2>
+        <Row style= { { color: 'white'}}>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangeShade3.hex, height, border} }>
+            <i>{`${flatColor.orangeShade3.name} - ${flatColor.orangeShade3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.blueShade3.hex, height, border} }>
+            <i>{`${flatColor.blueShade3.name} - ${flatColor.blueShade3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.greenShade3.hex, height, border} }>
+            <i>{`${flatColor.greenShade3.name} - ${flatColor.greenShade3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.yellowShade3.hex, height, border} }>
+            <i>{`${flatColor.yellowShade3.name} - ${flatColor.yellowShade3.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.grayShade3.hex, height, border} }>
+            <i>{`${flatColor.grayShade1.name} - ${flatColor.grayPrimary.hex}`}</i>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.whiteShade1.hex, height, border} }>
+            <i>{`${flatColor.whiteShade1.name} - ${flatColor.whiteShade1.hex}`}</i>
+          </Col>
+        </Row>
       </div>
     )
   }
