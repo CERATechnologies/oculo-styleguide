@@ -4,7 +4,7 @@ import { FaSearch } from 'react-icons/lib/fa'
 
 const style = {
   backgroundColor: '#bee8ab',
-  color: '#f2f2f2',
+  color: '#434a54',
 }
 
 export default class extends Component {
@@ -14,7 +14,7 @@ export default class extends Component {
     title: 'Input with Button',
     description: 'Enter a description',
     code: `
-    Enter text
+    Ensure rounded corners for any input fields
     `
   }
 
