@@ -48,7 +48,7 @@ Font Weight : 200
           <p>font-size: {h4fontSize}</p>
         </Row>
         <Row>
-          <h5 style={ { fontSize: h2fontSize  } }>Header 2</h5>
+          <h5 style={ { fontSize: h5fontSize  } }>Header 5</h5>
           <p>font-size: {h5fontSize}</p>
         </Row>
       </div>
