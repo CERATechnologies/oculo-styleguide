@@ -1,19 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Panel } from 'react-bootstrap'
-
-const style = {
-  fontFamily: 'Helvetica Neue',
-  fontWeight: '200',
-  bodyLineHeight: '20px',
-  bodyFontSize : '14px',
-  h1fontSize: '44px',
-  h2fontSize: '30px',
-  h3fontSize: '24px',
-  h4fontSize: '18px',
-  h5fontSize: '14px',
-  shortText : 'The quick brown fox jumps over the wall',
-  longText : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-}
+import { fontSizeStyle } from './../../common'
 
 export default class extends Component {
   static styleguide = {
@@ -23,10 +10,10 @@ export default class extends Component {
     description:
 `
 Typography used by Oculo \n
-*Primary Font Family* : \`${style.fontFamily}\` \n
-*Secondary Font Family* : \`Helvetica\` \n
-*Font Weight* : \`${style.fontWeight}\` \n
-*Line Height* : \`${style.bodyLineHeight}\` \n
+*Primary Font Family* : \`${fontSizeStyle.fontFamilyPrimary}\` \n
+*Secondary Font Family* : \`${fontSizeStyle.fontFamilySecondary}\` \n
+*Font Weight* : \`${fontSizeStyle.fontWeight}\` \n
+*Line Height* : \`${fontSizeStyle.bodyLineHeight}\` \n
 `,
     code: `
 
@@ -35,15 +22,15 @@ Typography used by Oculo \n
 
   render () {
     const {
-      fontFamily, fontWeight,
+      fontFamilyPrimary, fontWeight,
       h1fontSize, h2fontSize, h3fontSize, h4fontSize, h5fontSize,
       bodyFontSize, bodyLineHeight
-     } = style
+     } = fontSizeStyle
 
     return (
       <div>
         <Panel header="Headers fonts" bsStyle="info">
-          <div style={ {fontFamily} }>
+          <div style={ {fontFamily: fontFamilyPrimary} }>
             <Row>
               <h1 style={ { fontSize: h1fontSize, fontWeight  } }>Header 1</h1>
               <p>font-size: {h1fontSize}</p>
@@ -71,17 +58,17 @@ Typography used by Oculo \n
 
         <Panel header="Body fonts" bsStyle="info">
           <h3>Short text</h3>
-          <div style={ {fontFamily, fontSize: bodyFontSize, lineHeight: bodyLineHeight} }>
-            <p>lighter : <div style={ {fontWeight: 'lighter' } }>{style.shortText}</div></p>
-            <p>normal : <div style={ {fontWeight: 'normal' } }>{style.shortText}</div></p>
-            <p>bold : <div style={ {fontWeight: 'bold' } }>{style.shortText}</div></p>
+          <div style={ {fontFamily: fontFamilyPrimary, fontSize: bodyFontSize, lineHeight: bodyLineHeight} }>
+            <p>lighter : <div style={ {fontWeight: 'lighter' } }>{fontSizeStyle.shortText}</div></p>
+            <p>normal : <div style={ {fontWeight: 'normal' } }>{fontSizeStyle.shortText}</div></p>
+            <p>bold : <div style={ {fontWeight: 'bold' } }>{fontSizeStyle.shortText}</div></p>
           </div>
 
           <h3>Long text</h3>
-          <div style={ {fontFamily, fontSize: bodyFontSize, lineHeight: bodyLineHeight} }>
-            <p>lighter : <div style={ {fontWeight: 'lighter' } }>{style.longText}</div></p>
-            <p>normal : <div style={ {fontWeight: 'normal' } }>{style.longText}</div></p>
-            <p>bold : <div style={ {fontWeight: 'bold' } }>{style.longText}</div></p>
+          <div style={ {fontFamily: fontFamilyPrimary, fontSize: bodyFontSize, lineHeight: bodyLineHeight} }>
+            <p>lighter : <div style={ {fontWeight: 'lighter' } }>{fontSizeStyle.longText}</div></p>
+            <p>normal : <div style={ {fontWeight: 'normal' } }>{fontSizeStyle.longText}</div></p>
+            <p>bold : <div style={ {fontWeight: 'bold' } }>{fontSizeStyle.longText}</div></p>
           </div>
         </Panel>
 

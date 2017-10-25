@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import OculoButton from './OculoButton'
 import { ButtonGroup } from 'react-bootstrap'
+import { flatColor, defaultButtonStyle } from './../../common'
 
 export default class extends Component {
   static styleguide = {

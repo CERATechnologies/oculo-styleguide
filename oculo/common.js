@@ -40,3 +40,48 @@ export const flatColor = {
   whiteShade1: { name: 'Lavender Gray', hex: '#c7c7c7' },
   whiteShade2: { name: 'Spanish Gray', hex: '#9b9b9b' },
 }
+
+export const fontSizeStyle = {
+  fontFamilyPrimary: 'Helvetica Neue',
+  fontFamilySecondary: 'Helvetica',
+  fontWeight: '200',
+  bodyLineHeight: '20px',
+  bodyFontSize : '14px',
+  h1fontSize: '44px',
+  h2fontSize: '30px',
+  h3fontSize: '24px',
+  h4fontSize: '18px',
+  h5fontSize: '14px',
+  shortText : 'The quick brown fox jumps over the wall',
+  longText : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+}
+
+export const modalStyle = {
+  headerDefault: {
+    backgroundColor: flatColor.orangePrimary.hex,
+  },
+  headerTitleDefault: {
+    color: flatColor.whitePrimary.hex,
+    fontWeight: fontSizeStyle.fontWeight,
+    fontSize: fontSizeStyle.h3fontSize
+  }
+}
+
+export const defaultPrimaryButtonStyle = {
+  backgroundColor: flatColor.orangePrimary.hex,
+  color: flatColor.whitePrimary.hex,
+  fontSize: fontSizeStyle.bodyFontSize,
+  fontWeight: fontSizeStyle.fontWeight,
+  padding: '8px 22px 8px 22px',
+  fontWeight: 'normal',
+  border: 'none',
+  textAlign: 'center',
+  margin: '4px 2px',
+  borderRadius: '30px'
+}
+
+export const defaultSecondaryButtonStyle = {
+  ...defaultPrimaryButtonStyle,
+  backgroundColor: flatColor.whitePrimary.hex,
+  color: flatColor.grayShade1.hex
+}
