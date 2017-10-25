@@ -20,12 +20,16 @@ export default class extends Component {
     index: '7.1',
     category: 'Typography',
     title: 'Typography',
-    description: 'Typography used by Oculo',
+    description:
+`
+Typography used by Oculo \n
+*Primary Font Family* : \`${style.fontFamily}\` \n
+*Secondary Font Family* : \`Helvetica\` \n
+*Font Weight* : \`${style.fontWeight}\` \n
+*Line Height* : \`${style.bodyLineHeight}\` \n
+`,
     code: `
-Primary Font Family : ${style.fontFamily}
-Secondary Font Family : Helvetica
-Font Weight : ${style.fontWeight}
-Line Height : ${style.bodyLineHeight}
+
     `
   }
 
