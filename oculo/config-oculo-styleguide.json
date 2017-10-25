@@ -2,7 +2,8 @@
   "title": "Oculo Style Guide",
   "files": [
     "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css",
-    "oculo.css"
+    "oculo.css",
+    "common.js"
   ],
   "babelConfig": {
     "presets": [
