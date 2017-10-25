@@ -1,6 +1,21 @@
 import React, { Component } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 
+// .modal#error-integration {
+//   .modal-header {
+//     background-color: $oculo-orange;
+//     border-top-left-radius: 5px;
+//     border-top-right-radius: 5px;
+//     color: $white;
+//   }
+// }
+
+const modalCSS = {
+  header: {
+    backgroundColour
+  }
+}
+
 export default class extends Component {
   static styleguide = {
     index: '4.1',
@@ -9,7 +24,9 @@ export default class extends Component {
     description: `
 A rendered modal with header, body, and set of actions in the footer.
 
-The header is added automatically if you pass in a \`title\` prop.
+The header is added automatically if you pass in a \`title\` prop. \n
+\n
+*[placholder]* : \`placeholder\` \n
 `,
     code: `
 <Modal.Dialog>
