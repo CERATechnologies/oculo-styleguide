@@ -73,7 +73,7 @@ If space permits, use the naming convention in the following order
         <h1>Secondary buttons</h1>
         <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>Create Eye Report</Button>
         <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>
-          <FaClockO size={18} color={flatColor.orangePrimary.hex} style={{ marginRight: '8px' }}/>Book Appointment
+          <FaClockO size={20} color={flatColor.orangePrimary.hex} style={{ marginRight: '8px' }}/>Book Appointment
         </Button>
         <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.bluePrimary.hex, color: flatColor.grayPrimary.hex }}>Create Referral</Button>
         <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.yellowPrimary.hex, color: flatColor.grayPrimary.hex }}>Withdraw</Button>
