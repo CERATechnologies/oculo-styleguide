@@ -14,6 +14,11 @@ export default class extends Component {
     description:
 `
 Contrast guide
+
+Positive (CTA: Save, Send, Download): Blue, Green;
+Negative (CTA: Delete, Block, Reset): Red;
+Neutral (CTA: See more, Alternatives, Discover): Black;
+Disable: Grey;
 `
 ,
     code: ` `

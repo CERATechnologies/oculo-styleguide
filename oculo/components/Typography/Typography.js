@@ -13,6 +13,7 @@ export default class extends Component {
 * Secondary Font Family* : \`${fontSizeStyle.fontFamilySecondary}\`
 * Font Weight* : \`${fontSizeStyle.fontWeight}\`
 * Line Height* : \`${fontSizeStyle.bodyLineHeight}\`
+* Capitilize each letter for main header titles
 `,
     code: `
 

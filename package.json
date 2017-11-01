@@ -92,6 +92,7 @@
     "mustache": "^2.1.2",
     "prop-types": "^15.6.0",
     "react-docgen": "^2.0.0",
+    "react-icons": "^2.2.7",
     "react-simpletabs": "^0.7.0",
     "slash": "^1.0.0",
     "watchify": "^3.7.0"

@@ -36,7 +36,7 @@ export const flatColor = {
   grayShade3: { name: 'Dark Gunmetal', hex: '#1f2227' },
   whiteTint2: { name: 'White Smoke', hex: '#f6f6f6' },
   whiteTint1: { name: 'White Smoke', hex: '#f4f4f4' },
-  whitePrimary: { name: 'Anti-Flash White', hex: '#f2f2f2' },
+  whitePrimary: { name: 'White', hex: '#ffffff' },
   whiteShade1: { name: 'Lavender Gray', hex: '#c7c7c7' },
   whiteShade2: { name: 'Spanish Gray', hex: '#9b9b9b' },
 }
@@ -47,6 +47,7 @@ export const fontSizeStyle = {
   fontWeight: '200',
   bodyLineHeight: '20px',
   bodyFontSize : '14px',
+  bodySmallFontSize: '12px',
   h1fontSize: '44px',
   h2fontSize: '30px',
   h3fontSize: '24px',
@@ -72,16 +73,32 @@ export const defaultPrimaryButtonStyle = {
   color: flatColor.whitePrimary.hex,
   fontSize: fontSizeStyle.bodyFontSize,
   fontWeight: fontSizeStyle.fontWeight,
-  padding: '8px 22px 8px 22px',
+  padding: '6px 12px 6px 12px',
   fontWeight: 'normal',
-  border: 'none',
+  borderStyle: 'solid',
+  borderWidth: '1px',
+  borderColor: flatColor.orangePrimary.hex,
   textAlign: 'center',
-  margin: '4px 2px',
-  borderRadius: '5px'
+  margin: '2px',
+  borderRadius: '6px',
+  display : 'inline-block',
+  backgroundImage: 'none',
 }
 
 export const defaultSecondaryButtonStyle = {
   ...defaultPrimaryButtonStyle,
   backgroundColor: flatColor.whitePrimary.hex,
-  color: flatColor.grayShade1.hex
+  color: flatColor.grayShade1.hex,
+  borderColor: flatColor.grayShade1.hex,
+  borderWidth: '2px',
+  margin: '1px',
+}
+
+export const defaultSmallButtonStyle = {
+  ...defaultPrimaryButtonStyle,
+  backgroundColor: flatColor.whitePrimary.hex,
+  fontSize: fontSizeStyle.bodySmallFontSize,
+  padding: '1px 5px 1px 5px',
+  borderWidth: '2px',
+  margin: '1px',
 }
