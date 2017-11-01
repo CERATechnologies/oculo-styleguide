@@ -48,22 +48,16 @@ export default class extends Component {
   static styleguide = {
     index: '4.1',
     category: 'Modals',
-    title: 'A static example',
+    title: 'A static example for modals',
     description: `
-A rendered modal with header, body, and set of actions in the footer.
+* A rendered modal with 3 sections : header, body, and set of actions in the footer.
+* Allow only 2 ways to exit the modal, close button or click outside the modal
+* No crosses on the top right to close the modal
+* Always start modal header title with a verb.  \`Good example\` : "Search for a provider".  \`Bad example\` : "Provider listing"
+* Primary \`call to action\` button is always on the left
+* Secondary button is always on the right
+* Modal title should be telling what the user is doing :
 
-The header is added automatically if you pass in a \`title\` prop. \n
-\n
-*border radius* : \`placeholder\` \n
-
-No crosses on the top right at all
-
-Explicity way to get out is the close button, implicit way is to click outside of the modal
-
-Modal title should be telling what the user is doing : \n
-\`Good example\` : "Search for a provider \n
-\`Bad example\` : "Search" \n
-Always start with a verb
 `,
     code: `
 <Modal.Dialog>
@@ -91,8 +85,8 @@ Always start with a verb
         </Modal.Header>
         <Modal.Body>{bodyContent}</Modal.Body>
         <Modal.Footer>
-          <Button style={ defaultSecondaryButtonStyle }>Close</Button>
           <Button style={ defaultPrimaryButtonStyle }>Save</Button>
+          <Button style={ defaultSecondaryButtonStyle }>Close</Button>
         </Modal.Footer>
       </Modal.Dialog>
 

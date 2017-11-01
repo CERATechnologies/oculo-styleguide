@@ -9,11 +9,10 @@ export default class extends Component {
     title: 'Typography',
     description:
 `
-Typography used by Oculo \n
-*Primary Font Family* : \`${fontSizeStyle.fontFamilyPrimary}\` \n
-*Secondary Font Family* : \`${fontSizeStyle.fontFamilySecondary}\` \n
-*Font Weight* : \`${fontSizeStyle.fontWeight}\` \n
-*Line Height* : \`${fontSizeStyle.bodyLineHeight}\` \n
+* Primary Font Family* : \`${fontSizeStyle.fontFamilyPrimary}\`
+* Secondary Font Family* : \`${fontSizeStyle.fontFamilySecondary}\`
+* Font Weight* : \`${fontSizeStyle.fontWeight}\`
+* Line Height* : \`${fontSizeStyle.bodyLineHeight}\`
 `,
     code: `
 

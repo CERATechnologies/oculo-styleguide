@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Panel } from 'react-bootstrap'
-import { flatColor } from './../../common'
+import { flatColor, fontSizeStyle } from './../../common'
+
 
 const height = '100px'
 const border = 'solid 1px'
@@ -10,16 +11,21 @@ export default class extends Component {
     index: '6.1',
     category: 'Color Guide',
     title: 'Color Guide',
-    description: 'Colors used ...',
+    description:
+`
+Contrast guide
+`
+,
     code: ` `
   }
 
   render () {
+    const { fontFamilyPrimary, fontWeight, bodyFontSize, bodyLineHeight } = fontSizeStyle
     return (
       <div>
         <h1>Core pallete</h1>
 
-        <h2>Primary colors</h2>
+        <h3>Primary colors</h3>
         <Row>
           <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangePrimary.hex, height, border} }>
             <i>{`${flatColor.orangePrimary.name} - ${flatColor.orangePrimary.hex}`}</i>
@@ -41,7 +47,7 @@ export default class extends Component {
           </Col>
         </Row>
 
-        <h2>Tint</h2>
+        <h3>Tint</h3>
         <Row>
           <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangeTint3.hex, height, border} }>
             <i>{`${flatColor.orangeTint3.name} - ${flatColor.orangeTint3.hex}`}</i>
@@ -63,7 +69,7 @@ export default class extends Component {
           </Col>
         </Row>
 
-        <h2>Shade</h2>
+        <h3>Shade</h3>
         <Row style= { { color: 'white'}}>
           <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangeShade3.hex, height, border} }>
             <i>{`${flatColor.orangeShade3.name} - ${flatColor.orangeShade3.hex}`}</i>
@@ -84,6 +90,33 @@ export default class extends Component {
             <i>{`${flatColor.whiteShade1.name} - ${flatColor.whiteShade1.hex}`}</i>
           </Col>
         </Row>
+
+        <h1>Typography color contrast guide</h1>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.orangePrimary.hex, height, border} }>
+            <div style={ { fontSize: bodyFontSize, fontWeight, fontFamily: fontFamilyPrimary, color: flatColor.whitePrimary.hex }}>
+              <p> Background color : {flatColor.orangePrimary.hex}</p>
+              <p> Font color : {flatColor.whitePrimary.hex}</p>
+            </div>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.bluePrimary.hex, height, border} }>
+            <div style={ { fontSize: bodyFontSize, fontWeight, fontFamily: fontFamilyPrimary  } }>
+              <p> Background color : {flatColor.bluePrimary.hex}</p>
+              <p> Font color : {flatColor.grayPrimary.hex}</p>
+            </div>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.yellowPrimary.hex, height, border} }>
+            <div style={ { fontSize: bodyFontSize, fontWeight, fontFamily: fontFamilyPrimary  } }>
+              <p> Background color : {flatColor.yellowPrimary.hex}</p>
+              <p> Font color : {flatColor.grayPrimary.hex}</p>
+            </div>
+          </Col>
+          <Col xs={2} md={2} style={ { backgroundColor: flatColor.greenPrimary.hex, height, border} }>
+            <div style={ { fontSize: bodyFontSize, fontWeight, fontFamily: fontFamilyPrimary  } }>
+              <p> Background color : {flatColor.greenPrimary.hex}</p>
+              <p> Font color : {flatColor.grayPrimary.hex}</p>
+            </div>
+          </Col>
+
       </div>
     )
   }

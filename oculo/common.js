@@ -77,7 +77,7 @@ export const defaultPrimaryButtonStyle = {
   border: 'none',
   textAlign: 'center',
   margin: '4px 2px',
-  borderRadius: '30px'
+  borderRadius: '5px'
 }
 
 export const defaultSecondaryButtonStyle = {
