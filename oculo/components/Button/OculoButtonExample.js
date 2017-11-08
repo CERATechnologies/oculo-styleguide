@@ -1,12 +1,30 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 import { flatColor,
          defaultButtonStyle,
          defaultPrimaryButtonStyle,
          defaultSecondaryButtonStyle,
          defaultSmallButtonStyle
        } from './../../common'
-import { FaDownload, FaEdit, FaClockO } from 'react-icons/lib/fa/'
+import { FaDownload,
+         FaEdit,
+         FaClockO,
+         FaStreetView,
+         FaPlusSquareO,
+         FaPlusCircle,
+         FaUserPlus,
+         FaCloudDownload,
+         FaFloppyO,
+         FaFolder,
+         FaFolderO,
+         FaCheckSquareO,
+         FaEye,
+         FaFileText,
+         FaRotateLeft,
+         FaChainBroken,
+         FaTimesCircle,
+         FaPencil
+       } from 'react-icons/lib/fa/'
 
 const style = {
   border: '2px solid',
@@ -25,25 +43,31 @@ export default class extends Component {
 `
 * Non-form button must have an icon and description of the button  (may be this should be in the form guide cateogory?)
 * Form button must only contain a description of the button (may be this should be in the form guide cateogory?)
+* CTA button must be on the right of a form (may be this should be in the form guide cateogory?)
+* CTA button does not need an icon (may be this should be in the form guide cateogory?)
 
-# Button naming/display guideline ...
+# How to NAME buttons ...
 If space permits, use the naming convention in the following order
 * Naming style \`IVN\` : [Fontawesome Icon] + [Verb] + [Noun]
-* Naming style \`VN\`[Verb] + [Noun]
-* Naming style \`V\`[Verb]
+* Naming style \`VN\` : [Verb] + [Noun]
+* Naming style \`V\` : [Verb]
 * Capitalize all words in button description
 * Use fontawesome icons only
 * Avoid naming like Create New, New Referral.
 * Avoid a button with only an icon with no description
 
-# Button usage guideline ...
-* When view has multiple or no clear/obvious context in a single view, use \`IVN\` or \`VN\`. Example : Create Referral, Download Eye Report
+# How to USE buttons  ...
+* When a view has multiple or no clear/obvious, use \`IVN\` or \`VN\`. Example : Create Referral, Download Eye Report
 * When view has a clear and obvious context, use \`V\`
 * Small button should only be used to perform action on items in a list
 * Avoid adding multiple primary buttons in a view where there is only a single context, if that happens, you might wanna rethink of relocating the form or the context to its self contained area
 `,
     code: `
-    [placeholder]
+Code snippet:
+
+<Button>Download Referral</Button>
+
+<Button><FaStreetView size={20}/>View Patient</Button>
     `
   }
 
@@ -52,33 +76,217 @@ If space permits, use the naming convention in the following order
       <div>
         <h1>Primary Buttons</h1>
         <h3>Active State</h3>
-        <Button style={defaultPrimaryButtonStyle}>Download Referral</Button>
-        <Button style={defaultPrimaryButtonStyle}>
-          <FaDownload size={20} color={flatColor.whitePrimary.hex} style={{ marginRight: '5px' }}/>Download Referral
-        </Button>
+        <Row>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>Download Referral</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>
+              <FaDownload size={20} color={flatColor.whitePrimary.hex} style={{ marginRight: '5px' }}/>Download Referral
+              </Button>
+          </Col>
+        </Row>
 
-        <Button style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.bluePrimary.hex, borderColor: flatColor.bluePrimary.hex}}>View Patient</Button>
-        <Button style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.yellowPrimary.hex, borderColor: flatColor.yellowPrimary.hex}}>Add Provider</Button>
-        <Button style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.greenPrimary.hex, borderColor: flatColor.greenPrimary.hex}}>Create Patient</Button>
-        <Button style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.greenPrimary.hex, borderColor: flatColor.greenPrimary.hex}}>Save</Button>
+        <Row>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.bluePrimary.hex, borderColor: flatColor.bluePrimary.hex}}>View Patient</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.bluePrimary.hex, borderColor: flatColor.bluePrimary.hex}}>
+              <FaStreetView size={20} color={flatColor.grayPrimary.hex} style={{ marginRight: '5px' }}/>
+              View Patient
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.yellowPrimary.hex, borderColor: flatColor.yellowPrimary.hex}}>Add Provider</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.yellowPrimary.hex, borderColor: flatColor.yellowPrimary.hex}}>
+              <FaPlusCircle size={20} color={flatColor.grayPrimary.hex} style={{ marginRight: '5px' }}/>
+              Add Provider
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.greenPrimary.hex, borderColor: flatColor.greenPrimary.hex}}>Create Patient</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.greenPrimary.hex, borderColor: flatColor.greenPrimary.hex}}>
+              <FaUserPlus size={20} color={flatColor.grayPrimary.hex} style={{ marginRight: '5px' }}/>
+              Create Patient
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.whiteShade1.hex, borderColor: flatColor.whiteShade1.hex}}>Mark as Read</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.whiteShade1.hex, borderColor: flatColor.whiteShade1.hex}}>
+              <FaCheckSquareO size={20} color={flatColor.grayPrimary.hex} style={{ marginRight: '5px' }}/>
+              Mark as Read
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>Save</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>
+              <FaFolder size={20} color={flatColor.whitePrimary.hex} style={{ marginRight: '5px' }}/>
+              Save
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>Update</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>
+              <FaPencil size={20} color={flatColor.whitePrimary.hex} style={{ marginRight: '5px' }}/>
+              Update
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>Add</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={defaultPrimaryButtonStyle}>
+              <FaPlusCircle size={20} color={flatColor.whitePrimary.hex} style={{ marginRight: '5px' }}/>
+              Add
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.whiteShade1.hex, borderColor: flatColor.whiteShade1.hex}}>Cancel</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={{...defaultPrimaryButtonStyle, color: flatColor.grayShade1.hex, backgroundColor: flatColor.whiteShade1.hex, borderColor: flatColor.whiteShade1.hex}}>
+              <FaTimesCircle size={20} color={flatColor.grayShade1.hex} style={{ marginRight: '5px' }}/>
+              Cancel
+            </Button>
+          </Col>
+        </Row>
+
+        <h1>Secondary buttons</h1>
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>Create Referral</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>
+              <FaFileText size={20} color={flatColor.orangePrimary.hex} style={{ marginRight: '8px' }}/>
+              Create Referral
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>Create Eye Report</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>
+              <FaEye size={20} color={flatColor.orangePrimary.hex} style={{ marginRight: '8px' }}/>
+              Create Eye Report
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>Book Appointment</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>
+              <FaClockO size={20} color={flatColor.orangePrimary.hex} style={{ marginRight: '8px' }}/>
+              Book Appointment
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.bluePrimary.hex, color: flatColor.grayPrimary.hex }}>Create Referral</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.bluePrimary.hex, color: flatColor.grayPrimary.hex }}>
+              <FaFileText size={20} color={flatColor.bluePrimary.hex} style={{ marginRight: '8px' }}/>
+              Create Referral</Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.greenPrimary.hex, color: flatColor.grayPrimary.hex }}>Redirect</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.greenPrimary.hex, color: flatColor.grayPrimary.hex }}>
+              <FaStreetView size={20} color={flatColor.greenPrimary.hex} style={{ marginRight: '8px' }}/>
+              View Profile
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.yellowPrimary.hex, color: flatColor.grayPrimary.hex }}>Withdraw</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.yellowPrimary.hex, color: flatColor.grayPrimary.hex }}>
+              <FaChainBroken size={20} color={flatColor.yellowPrimary.hex} style={{ marginRight: '8px' }}/>
+              Withdraw
+            </Button>
+          </Col>
+        </Row>
+
+        <Row>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.greenPrimary.hex, color: flatColor.grayPrimary.hex }}>Redirect</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.greenPrimary.hex, color: flatColor.grayPrimary.hex }}>
+              <FaRotateLeft size={20} color={flatColor.greenPrimary.hex} style={{ marginRight: '8px' }}/>
+              Redirect
+            </Button>
+          </Col>
+        </Row>
 
 
+        <Row>
+          <Col md={6}>
+            <Button style={{...defaultSecondaryButtonStyle, backgroundColor: flatColor.whitePrimary.hex, borderColor: flatColor.grayPrimary.hex}}>Cancel</Button>
+          </Col>
+          <Col md={6}>
+            <Button style={{...defaultSecondaryButtonStyle, backgroundColor: flatColor.whitePrimary.hex, borderColor: flatColor.grayPrimary.hex}}>
+              <FaTimesCircle size={20} color={flatColor.grayPrimary.hex} style={{ marginRight: '8px' }}/>
+              Cancel
+            </Button>
+          </Col>
+        </Row>
 
-        <h3>Disabled State</h3>
+        <h3>Disabled Buttons</h3>
         <Button disabled style={defaultPrimaryButtonStyle}>Download Referral</Button>
         <Button disabled style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.bluePrimary.hex, borderColor: flatColor.bluePrimary.hex}}>View Patient</Button>
         <Button disabled style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.yellowPrimary.hex, borderColor: flatColor.yellowPrimary.hex}}>Add Provider</Button>
         <Button disabled style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.greenPrimary.hex, borderColor: flatColor.greenPrimary.hex}}>Create Patient</Button>
 
-        <h1>Secondary buttons</h1>
-        <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>Create Eye Report</Button>
-        <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.orangePrimary.hex }}>
-          <FaClockO size={20} color={flatColor.orangePrimary.hex} style={{ marginRight: '8px' }}/>Book Appointment
-        </Button>
-        <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.bluePrimary.hex, color: flatColor.grayPrimary.hex }}>Create Referral</Button>
-        <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.yellowPrimary.hex, color: flatColor.grayPrimary.hex }}>Withdraw</Button>
-        <Button style={ {...defaultSecondaryButtonStyle, borderColor: flatColor.greenPrimary.hex, color: flatColor.grayPrimary.hex }}>Redirect</Button>
-        <Button style={{... defaultSecondaryButtonStyle, backgroundColor: flatColor.whitePrimary.hex, borderColor: flatColor.grayPrimary.hex}}>Cancel</Button>
+        <h3>Dynamic Buttons???</h3>
 
         <h1>Small buttons</h1>
         <Button style={ {...defaultSmallButtonStyle, borderColor: flatColor.orangePrimary.hex, color: flatColor.grayPrimary.hex }}>Add</Button>

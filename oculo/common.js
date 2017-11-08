@@ -37,7 +37,7 @@ export const flatColor = {
   whiteTint2: { name: 'White Smoke', hex: '#f6f6f6' },
   whiteTint1: { name: 'White Smoke', hex: '#f4f4f4' },
   whitePrimary: { name: 'White', hex: '#ffffff' },
-  whiteShade1: { name: 'Lavender Gray', hex: '#c7c7c7' },
+  whiteShade1: { name: 'Platinum', hex: '#e6e6e6' },
   whiteShade2: { name: 'Spanish Gray', hex: '#9b9b9b' },
 }
 
