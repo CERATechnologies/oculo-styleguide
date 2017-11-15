@@ -17,28 +17,28 @@ const example1 = {
 
 const example2 = {
   headerStyle: { ...modalStyle.headerDefault, backgroundColor: flatColor.bluePrimary.hex },
-  titleStyle: { ...modalStyle.headerTitleDefault, color: flatColor.grayPrimary.hex },
+  titleStyle: modalStyle.headerTitleDefault,
   titleContent: 'Search for a patient',
   bodyContent: fontSizeStyle.shortText,
-  defaultPrimaryButtonStyle: { ...defaultPrimaryButtonStyle, backgroundColor: flatColor.bluePrimary.hex, color: flatColor.grayPrimary.hex },
+  defaultPrimaryButtonStyle: { ...defaultPrimaryButtonStyle, backgroundColor: flatColor.bluePrimary.hex, borderColor: flatColor.bluePrimary.hex },
   defaultSecondaryButtonStyle
 }
 
 const example3 = {
   headerStyle: { ...modalStyle.headerDefault, backgroundColor: flatColor.yellowPrimary.hex },
-  titleStyle: { ...modalStyle.headerTitleDefault, color: flatColor.grayPrimary.hex },
+  titleStyle: modalStyle.headerTitleDefault,
   titleContent: 'Complete the form',
   bodyContent: fontSizeStyle.longText,
-  defaultPrimaryButtonStyle: { ...defaultPrimaryButtonStyle, backgroundColor: flatColor.yellowPrimary.hex, color: flatColor.grayPrimary.hex },
+  defaultPrimaryButtonStyle: { ...defaultPrimaryButtonStyle, backgroundColor: flatColor.yellowPrimary.hex, borderColor: flatColor.yellowPrimary.hex },
   defaultSecondaryButtonStyle
 }
 
 const example4 = {
   headerStyle: { ...modalStyle.headerDefault, backgroundColor: flatColor.greenPrimary.hex },
-  titleStyle: { ...modalStyle.headerTitleDefault, color: flatColor.grayPrimary.hex },
+  titleStyle: modalStyle.headerTitleDefault,
   titleContent: 'Add a new provider',
   bodyContent: fontSizeStyle.longText,
-  defaultPrimaryButtonStyle: { ...defaultPrimaryButtonStyle, backgroundColor: flatColor.greenPrimary.hex, color: flatColor.grayPrimary.hex },
+  defaultPrimaryButtonStyle: { ...defaultPrimaryButtonStyle, backgroundColor: flatColor.greenPrimary.hex, borderColor: flatColor.greenPrimary.hex },
   defaultSecondaryButtonStyle
 }
 
@@ -75,11 +75,11 @@ export default class extends Component {
     `
   }
 
-  renderModals = (example) => {
+  renderModals = (example, index) => {
     const { headerStyle, titleStyle, titleContent, bodyContent, defaultPrimaryButtonStyle, defaultSecondaryButtonStyle } = example
 
     return(
-      <Modal.Dialog>
+      <Modal.Dialog key={index}>
         <Modal.Header style={ headerStyle }>
           <Modal.Title style={ titleStyle }>{titleContent}</Modal.Title>
         </Modal.Header>
@@ -93,12 +93,11 @@ export default class extends Component {
     )
   }
 
-
   render () {
     return (
       <div className='static-modal'>
 
-        { examples.map((example) => this.renderModals(example)) }
+        { examples.forEach((example, index) => this.renderModals(example, index)) }
       </div>
     )
   }

@@ -59,16 +59,16 @@ export default class extends Component {
         <Panel header="Body fonts" bsStyle="info">
           <h3>Short text</h3>
           <div style={ {fontFamily: fontFamilyPrimary, fontSize: bodyFontSize, lineHeight: bodyLineHeight} }>
-            <p>lighter : <div style={ {fontWeight: 'lighter' } }>{fontSizeStyle.shortText}</div></p>
-            <p>normal : <div style={ {fontWeight: 'normal' } }>{fontSizeStyle.shortText}</div></p>
-            <p>bold : <div style={ {fontWeight: 'bold' } }>{fontSizeStyle.shortText}</div></p>
+            <p style={ {fontWeight: 'lighter' } }>lighter : {fontSizeStyle.shortText}</p>
+            <p style={ {fontWeight: 'normal' } }>normal : {fontSizeStyle.shortText}</p>
+            <p style={ {fontWeight: 'bold' } }>bold : {fontSizeStyle.shortText}</p>
           </div>
 
           <h3>Long text</h3>
           <div style={ {fontFamily: fontFamilyPrimary, fontSize: bodyFontSize, lineHeight: bodyLineHeight} }>
-            <p>lighter : <div style={ {fontWeight: 'lighter' } }>{fontSizeStyle.longText}</div></p>
-            <p>normal : <div style={ {fontWeight: 'normal' } }>{fontSizeStyle.longText}</div></p>
-            <p>bold : <div style={ {fontWeight: 'bold' } }>{fontSizeStyle.longText}</div></p>
+            <p style={ {fontWeight: 'lighter' } }>lighter : {fontSizeStyle.longText}</p>
+            <p style={ {fontWeight: 'normal' } }>normal : {fontSizeStyle.longText}</p>
+            <p style={ {fontWeight: 'bold' } }>bold : {fontSizeStyle.longText}</p>
           </div>
         </Panel>
 
