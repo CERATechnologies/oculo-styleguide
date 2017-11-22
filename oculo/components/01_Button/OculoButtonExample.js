@@ -41,12 +41,6 @@ export default class extends Component {
     title: 'Buttons',
     description:
 `
-* Non-form button must have an icon and description of the button  (may be this should be in the form guide cateogory?)
-* Form button must only contain a description of the button (may be this should be in the form guide cateogory?)
-* CTA button must be on the right of a form (may be this should be in the form guide cateogory?)
-* CTA button does not need an icon (may be this should be in the form guide cateogory?)
-* form category - if selection is less than 7. use toggle button groups
-
 # How to NAME buttons ...
 If space permits, use the naming convention in the following order
 * Naming style \`IVN\` : [Fontawesome Icon] + [Verb] + [Noun]
