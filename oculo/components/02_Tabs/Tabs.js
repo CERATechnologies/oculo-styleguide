@@ -21,7 +21,6 @@ export default class extends Component {
   }
 
   handleTabSelect = (selectTab, event) => {
-    debugger
     event.preventDefault()
     this.setState({ activeTab: selectTab })
   }
