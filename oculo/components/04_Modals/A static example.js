@@ -97,7 +97,7 @@ export default class extends Component {
     return (
       <div className='static-modal'>
 
-        { examples.forEach((example, index) => this.renderModals(example, index)) }
+        { examples.map((example, index) => this.renderModals(example, index)) }
       </div>
     )
   }
