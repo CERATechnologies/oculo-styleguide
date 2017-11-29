@@ -128,23 +128,7 @@ export default class extends Component {
     return (
       <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
         <ControlLabel>{controlLabeText}</ControlLabel>
-          <FormControl
-            type={type}
-            placeholder={placeholderText}
-          />
-      </FormGroup>
-    )
-  }
-
-  renderToggleButtonGroup = ({ dataId, controlLabeText, name, options }) => {
-    return (
-      <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
-        <ControlLabel>{controlLabeText}</ControlLabel>
-        <ButtonToolbar>
-          <ToggleButtonGroup type="radio" name={name} defaultValue={1} justified>
-            {options.map( (option, index) => <ToggleButton value={index+1}>{option}</ToggleButton> )}
-          </ToggleButtonGroup>
-        </ButtonToolbar>
+          <FormControl type={type} placeholder={placeholderText} />
       </FormGroup>
     )
   }
@@ -153,7 +137,35 @@ export default class extends Component {
     return (
       <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
         <Col sm={3} className="text-right"><ControlLabel>{controlLabeText}</ControlLabel></Col>
-        <Col sm={7}><FormControl type={type} placeholder={placeholderText} /></Col>
+        <Col sm={8}><FormControl type={type} placeholder={placeholderText} /></Col>
+      </FormGroup>
+    )
+  }
+
+  renderVerticalFormToggleButtonGroup = ({ dataId, controlLabeText, name, options }) => {
+    return (
+      <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
+        <ControlLabel>{controlLabeText}</ControlLabel>
+        <ButtonToolbar>
+          <ToggleButtonGroup type="radio" bsSize="small" name={name} defaultValue={1} justified >
+            {options.map( (option, index) => <ToggleButton value={index+1}>{option}</ToggleButton> )}
+          </ToggleButtonGroup>
+        </ButtonToolbar>
+      </FormGroup>
+    )
+  }
+
+  renderHorizontalFormToggleButtonGroup = ({ dataId, controlLabeText, name, options }) => {
+    return (
+      <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
+        <Col sm={3} className="text-right"><ControlLabel>{controlLabeText}</ControlLabel></Col>
+        <Col sm={8}>
+          <ButtonToolbar>
+            <ToggleButtonGroup type="radio"  bsSize="small" name={name} defaultValue={1} justified>
+              {options.map( (option, index) => <ToggleButton value={index+1}>{option}</ToggleButton> )}
+            </ToggleButtonGroup>
+          </ButtonToolbar>
+        </Col>
       </FormGroup>
     )
   }
@@ -162,24 +174,26 @@ export default class extends Component {
     return (
       <div>
         <Col sm={5}>
-          <h1>Vertical Form - Creating a new item</h1>
+          <h2>Vertical Form - Creating a new item</h2>
           <Panel header="Personal Details">
             <Form>
-              {formToggleGroup1.map( (toggleGroup) => this.renderToggleButtonGroup(toggleGroup) )}
+              {formToggleGroup1.map( (toggleGroup) => this.renderVerticalFormToggleButtonGroup(toggleGroup) )}
               {formTextFieldsGroup1.map( (textField) => this.renderVerticalFormTextField(textField) )}
-              {formToggleGroup2.map( (toggleGroup) => this.renderToggleButtonGroup(toggleGroup) )}
+              {formToggleGroup2.map( (toggleGroup) => this.renderVerticalFormToggleButtonGroup(toggleGroup) )}
               {formTextFieldsGroup2.map( (textField) => this.renderVerticalFormTextField(textField) )}
             </Form>
             <hr />
-            <Button className="pull-right" style={defaultPrimaryButtonStyle}>Update</Button>
+            <Button className="pull-right" style={defaultPrimaryButtonStyle}>Sign Up</Button>
           </Panel>
         </Col>
 
         <Col sm={5}>
-          <h1>Horizontal Form - Updating an existing item</h1>
+          <h2>Horizontal Form - Updating an existing item</h2>
           <Panel header="Personal Details">
             <Form horizontal>
+              {formToggleGroup1.map( (toggleGroup) => this.renderHorizontalFormToggleButtonGroup(toggleGroup) )}
               {formTextFieldsGroup1.map( (textField) => this.renderHorizontalFormTextField(textField) )}
+              {formToggleGroup2.map( (toggleGroup) => this.renderHorizontalFormToggleButtonGroup(toggleGroup) )}
               {formTextFieldsGroup2.map( (textField) => this.renderHorizontalFormTextField(textField) )}
             </Form>
             <hr />
