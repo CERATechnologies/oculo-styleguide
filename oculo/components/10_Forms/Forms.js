@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, ControlLabel, FormControl, HelpBlock, Panel, Col, Button } from 'react-bootstrap'
+import { Form, FormGroup, ControlLabel, FormControl, HelpBlock, Panel, Col, Button, ButtonToolbar, ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 import { generateUuid } from '../../utility/helper'
 import { defaultPrimaryButtonStyle } from './../../common'
 
@@ -93,6 +93,27 @@ const formTextFieldsGroup2 = [
   }
 ]
 
+const salutations = [ 'Mr', 'Ms', 'Miss', 'Mrs', 'Assoc.Prof', 'Master' ]
+const professions = [ 'Optometrist', 'Ophthalmologist' ]
+
+const formToggleGroup2 = [
+  {
+    dataId: 'professions',
+    controlLabeText: 'Profession',
+    name: 'professions-options',
+    options: professions
+  }
+]
+
+const formToggleGroup1 = [
+  {
+    dataId: 'salutaions',
+    controlLabeText: 'Title',
+    name: 'salutations-options',
+    options: salutations
+  }
+]
+
 export default class extends Component {
   static styleguide = {
     index: '10.1',
@@ -115,6 +136,19 @@ export default class extends Component {
     )
   }
 
+  renderToggleButtonGroup = ({ dataId, controlLabeText, name, options }) => {
+    return (
+      <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
+        <ControlLabel>{controlLabeText}</ControlLabel>
+        <ButtonToolbar>
+          <ToggleButtonGroup type="radio" name={name} defaultValue={1} justified>
+            {options.map( (option, index) => <ToggleButton value={index+1}>{option}</ToggleButton> )}
+          </ToggleButtonGroup>
+        </ButtonToolbar>
+      </FormGroup>
+    )
+  }
+
   renderHorizontalFormTextField = ({ dataId, controlLabeText, placeholderText, type }) => {
     return (
       <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
@@ -127,11 +161,13 @@ export default class extends Component {
   render () {
     return (
       <div>
-        <Col sm={4}>
+        <Col sm={5}>
           <h1>Vertical Form - Creating a new item</h1>
           <Panel header="Personal Details">
             <Form>
+              {formToggleGroup1.map( (toggleGroup) => this.renderToggleButtonGroup(toggleGroup) )}
               {formTextFieldsGroup1.map( (textField) => this.renderVerticalFormTextField(textField) )}
+              {formToggleGroup2.map( (toggleGroup) => this.renderToggleButtonGroup(toggleGroup) )}
               {formTextFieldsGroup2.map( (textField) => this.renderVerticalFormTextField(textField) )}
             </Form>
             <hr />
@@ -139,7 +175,7 @@ export default class extends Component {
           </Panel>
         </Col>
 
-        <Col sm={4}>
+        <Col sm={5}>
           <h1>Horizontal Form - Updating an existing item</h1>
           <Panel header="Personal Details">
             <Form horizontal>
