@@ -103,8 +103,6 @@ export default class extends Component {
     `
   }
 
-
-
   renderVerticalFormTextField = ({ dataId, controlLabeText, placeholderText, type }) => {
     return (
       <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
@@ -129,7 +127,7 @@ export default class extends Component {
   render () {
     return (
       <div>
-        <Col sm={6}>
+        <Col sm={4}>
           <h1>Vertical Form - Creating a new item</h1>
           <Panel header="Personal Details">
             <Form>
@@ -141,7 +139,7 @@ export default class extends Component {
           </Panel>
         </Col>
 
-        <Col sm={6}>
+        <Col sm={4}>
           <h1>Horizontal Form - Updating an existing item</h1>
           <Panel header="Personal Details">
             <Form horizontal>
