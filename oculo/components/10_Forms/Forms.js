@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, ControlLabel, FormControl, HelpBlock, Panel, Col } from 'react-bootstrap'
+import { Form, FormGroup, ControlLabel, FormControl, HelpBlock, Panel, Col, Button } from 'react-bootstrap'
 import { generateUuid } from '../../utility/helper'
+import { defaultPrimaryButtonStyle } from './../../common'
 
 // https://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php
 // https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f
@@ -119,8 +120,8 @@ export default class extends Component {
   renderHorizontalFormTextField = ({ dataId, controlLabeText, placeholderText, type }) => {
     return (
       <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
-        <Col sm={2} className="text-right"><ControlLabel>{controlLabeText}</ControlLabel></Col>
-        <Col sm={10}><FormControl type={type} placeholder={placeholderText} /></Col>
+        <Col sm={3} className="text-right"><ControlLabel>{controlLabeText}</ControlLabel></Col>
+        <Col sm={7}><FormControl type={type} placeholder={placeholderText} /></Col>
       </FormGroup>
     )
   }
@@ -128,21 +129,29 @@ export default class extends Component {
   render () {
     return (
       <div>
-        <h1>Vertical Form - Creating a new item</h1>
+        <Col sm={6}>
+          <h1>Vertical Form - Creating a new item</h1>
           <Panel header="Personal Details">
             <Form>
               {formTextFieldsGroup1.map( (textField) => this.renderVerticalFormTextField(textField) )}
               {formTextFieldsGroup2.map( (textField) => this.renderVerticalFormTextField(textField) )}
             </Form>
+            <hr />
+            <Button className="pull-right" style={defaultPrimaryButtonStyle}>Update</Button>
           </Panel>
+        </Col>
 
+        <Col sm={6}>
           <h1>Horizontal Form - Updating an existing item</h1>
-            <Panel header="Personal Details">
-              <Form horizontal>
-                {formTextFieldsGroup1.map( (textField) => this.renderHorizontalFormTextField(textField) )}
-                {formTextFieldsGroup2.map( (textField) => this.renderHorizontalFormTextField(textField) )}
-              </Form>
-            </Panel>
+          <Panel header="Personal Details">
+            <Form horizontal>
+              {formTextFieldsGroup1.map( (textField) => this.renderHorizontalFormTextField(textField) )}
+              {formTextFieldsGroup2.map( (textField) => this.renderHorizontalFormTextField(textField) )}
+            </Form>
+            <hr />
+            <Button className="pull-right" style={defaultPrimaryButtonStyle}>Update</Button>
+          </Panel>
+        </Col>
       </div>
     )
   }
