@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { FormGroup, ControlLabel, FormControl, HelpBlock, Panel } from 'react-bootstrap'
+import { Form, FormGroup, ControlLabel, FormControl, HelpBlock, Panel, Col } from 'react-bootstrap'
+import { generateUuid } from '../../utility/helper'
 
 // https://www.uxmatters.com/mt/archives/2006/07/label-placement-in-forms.php
 // https://uxplanet.org/designing-more-efficient-forms-structure-inputs-labels-and-actions-e3a47007114f
@@ -9,6 +10,8 @@ const description = `
 * Use panel to differentiate sections of a form if they are all in a single view
 * Do not have forms with multiple columns
 * Preferably use vertical forms only
+* If the purpose of form is to create a new item, use vertical forms
+* If the pupose of the form is the edit/update an existing item, use horizontal forms
 * Very short forms : 2 fields or less
 * Short forms : 3 to 6 fields
 * Long forms : > 6 fields
@@ -48,7 +51,46 @@ const description = `
 * Provide visual feedback beside the input label for any validation issues
 
 # Assistive popups ?
+
+# Technical
+* Use data-id instead of ids or className to identify elements to decouple CSS selectors from testing
 `
+
+const formTextFieldsGroup1 = [
+  {
+    dataId : 'first-name',
+    controlLabeText: 'First Name',
+    placeholderText: 'John',
+    type: 'text'
+  },
+  {
+    dataId : 'surname',
+    controlLabeText: 'Surname',
+    placeholderText: 'Smith',
+    type: 'text'
+  },
+  {
+    dataId : 'aphra-number',
+    controlLabeText: 'APHRA Number',
+    placeholderText: '012345A',
+    type: 'text'
+  }
+]
+
+const formTextFieldsGroup2 = [
+  {
+    dataId : 'phone',
+    controlLabeText: 'Phone',
+    placeholderText: '0400001234',
+    type: 'text'
+  },
+  {
+    dataId : 'email',
+    controlLabeText: 'Email',
+    placeholderText: 'JohnSmith@oculo.com.au',
+    type: 'email'
+  }
+]
 
 export default class extends Component {
   static styleguide = {
@@ -60,23 +102,48 @@ export default class extends Component {
     `
   }
 
+
+
+  renderVerticalFormTextField = ({ dataId, controlLabeText, placeholderText, type }) => {
+    return (
+      <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
+        <ControlLabel>{controlLabeText}</ControlLabel>
+          <FormControl
+            type={type}
+            placeholder={placeholderText}
+          />
+      </FormGroup>
+    )
+  }
+
+  renderHorizontalFormTextField = ({ dataId, controlLabeText, placeholderText, type }) => {
+    return (
+      <FormGroup data-id={dataId} key={`dataId-${generateUuid()}`}>
+        <Col sm={2} className="text-right"><ControlLabel>{controlLabeText}</ControlLabel></Col>
+        <Col sm={10}><FormControl type={type} placeholder={placeholderText} /></Col>
+      </FormGroup>
+    )
+  }
+
   render () {
     return (
-        <Panel header={'Referral'} bsStyle="info">
-          <Panel header={'Reason For Referral'}>
-            <FormGroup controlId="formBasicText">
-              <ControlLabel>Working example with validation</ControlLabel>
-                <FormControl
-                  type="text"
-                  value={'abc'}
-                  placeholder="Enter text"
-                  onChange={() => console.log('form')}
-                />
-              <FormControl.Feedback />
-              <HelpBlock>Validation is based on string length.</HelpBlock>
-            </FormGroup>
+      <div>
+        <h1>Vertical Form - Creating a new item</h1>
+          <Panel header="Personal Details">
+            <Form>
+              {formTextFieldsGroup1.map( (textField) => this.renderVerticalFormTextField(textField) )}
+              {formTextFieldsGroup2.map( (textField) => this.renderVerticalFormTextField(textField) )}
+            </Form>
           </Panel>
-        </Panel>
+
+          <h1>Horizontal Form - Updating an existing item</h1>
+            <Panel header="Personal Details">
+              <Form horizontal>
+                {formTextFieldsGroup1.map( (textField) => this.renderHorizontalFormTextField(textField) )}
+                {formTextFieldsGroup2.map( (textField) => this.renderHorizontalFormTextField(textField) )}
+              </Form>
+            </Panel>
+      </div>
     )
   }
 }
